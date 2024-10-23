@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Check if the commit message file is readable
+if [ ! -r "$1" ]; then
+    echo "The commit message file '$1' is not readable or does not exist."
+    exit 1
+fi
+
+# Retrieve the commit message from the file provided by Git
+COMMIT_MSG=$(cat "$1")
+
+echo "Testing Commit Message: '${COMMIT_MSG}'"
+
+# Regex to validate the format of the commit message
+if ! echo "$COMMIT_MSG" | grep -qE "^\[(CVGrain)\] (feat|fix|data|model|refactor|test|docs|chore|perf|exp): "; then
+    echo "ERROR: Your commit message does not follow the established naming conventions."
+    echo "Example: [CVGrain] feat: Add user authentication"
+    exit 1
+fi
+
+exit 0
