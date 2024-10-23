@@ -14,21 +14,27 @@ Before you can run CVGrain, you need to ensure that you have the following softw
 ### Installation
 To get started with CVGrain, follow these steps:
 
-1. Clone the repository:
+1. Navigate to the dir you want to clone the project
    ```bash
-   git clone https://github.com/yourusername/CVGrain.git
-2. Navigate to the project directory:
-   ```bash
-   git clone https://github.com/yourusername/CVGrain.git
-3. Install the required Python packages:
-   ```bash
-   pip install -r requirements.txt
+   cd C:/path/to/your/dir
    ```
+2. Begin your git control
+   ```bash
+   git init
+3. Clone the repository:
+   ```bash
+   git clone https://github.com/FabianDutraSilva/CVGrain.git
+4. Execute setup_hooks.bat. This will copy commit-msg file into .git/hooks, to run the precommit validation
+5. Connect to the remote repo
+   ```bash
+   git remote add origin https://github.com/FabianDutraSilva/CVGrain.git
+   ```
+
 ## Usage
 To run CVGrain, run ```python grain_detector.py``` in the project directory
 
 ## Contributing
-Contributions to CVGrain are welcome! Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests to us.
+Contributions to CVGrain are welcome!
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
@@ -36,9 +42,8 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ## Contact
 For any further questions about using or contributing to CVGrain, please contact [D. Cosentino - F. Dutra].
 
-
 ## Commit messages
-The project has a pre-commit hook to check that commit messages follow a specified format
+The project has a commit-msg hook to check that commit messages follow a specified format
 
 ### Structure
 ```bash
